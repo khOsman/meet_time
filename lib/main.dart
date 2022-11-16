@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:meet_time/resources/auth_methods.dart';
 import 'package:meet_time/screens/home_screen.dart';
 import 'package:meet_time/screens/login_screen.dart';
+import 'package:meet_time/screens/video_call_screen.dart';
 import 'package:meet_time/utils/colors.dart';
 
 void main() async {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
+        '/video-call': (context) => const VideoCallScreen(),
       },
       home: StreamBuilder(
         stream: AuthMethods().authChanges,
