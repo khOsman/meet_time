@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:meet_time/resources/auth_methods.dart';
 import 'package:meet_time/screens/history_meeting_screen.dart';
 import 'package:meet_time/screens/meeting_screen.dart';
+import 'package:meet_time/screens/settings_screen.dart';
 import 'package:meet_time/utils/colors.dart';
+import 'package:meet_time/widgets/custom_button.dart';
 import 'package:meet_time/widgets/home_meeting_btn.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Center(child: Text("Contacts")),
-    const Center(child: Text("Settings"))
+    const SettingsScreen(),
   ];
 
   @override

@@ -3,9 +3,12 @@ import 'dart:developer';
 import 'package:jitsi_meet/feature_flag/feature_flag.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:meet_time/resources/auth_methods.dart';
+import 'package:meet_time/resources/firestore_methods.dart';
 
 class JitsiMeetMethods {
   final AuthMethods _authMethods = AuthMethods();
+
+  final FirestoreMethods _firestoreMethods = FirestoreMethods();
 
   void createMeeting({
     required String roomName,
@@ -34,7 +37,7 @@ class JitsiMeetMethods {
       // ..serverURL = "https://someHost.com"
       // ..subject = "Meeting with Gunschu"
       //..featureFlag = featureFlag;
-
+      _firestoreMethods.addMeetingToHistory(roomName);
       await JitsiMeet.joinMeeting(options);
     } catch (error) {
       log("error: $error");
