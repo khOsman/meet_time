@@ -29,13 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
     const SettingsScreen(),
   ];
 
+  List<String> labels = ['Meet & Chat', 'Meetings', 'Contacts', 'Settings'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: backgroundColor,
         elevation: 0,
-        title: const Text("Meet & chat"),
+        title: Text(labels[_page]),
         centerTitle: true,
       ),
       body: pages[_page],
@@ -47,15 +49,15 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _page,
         type: BottomNavigationBarType.fixed,
         unselectedFontSize: 14,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.comment_bank), label: 'Meet & Chat'),
+              icon: Icon(Icons.comment_bank), label: labels[0]),
           BottomNavigationBarItem(
-              icon: Icon(Icons.lock_clock), label: 'Meetings'),
+              icon: Icon(Icons.lock_clock), label: labels[1]),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline), label: 'Contacts'),
+              icon: Icon(Icons.person_outline), label: labels[2]),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined), label: 'Settings'),
+              icon: Icon(Icons.settings_outlined), label: labels[3]),
         ],
       ),
     );

@@ -23,12 +23,12 @@ class MeetingOption extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(14.0, 8, 14, 8),
             child: Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
               ),
             ),
           ),
-          Switch.adaptive(value: isMute, onChanged: onChange)
+          Switch.adaptive(value: isMute, onChanged: onChange),
         ],
       ),
     );

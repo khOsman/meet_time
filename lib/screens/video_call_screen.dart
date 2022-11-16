@@ -18,8 +18,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
   late TextEditingController _meetingIdController;
   late TextEditingController _meetingNameController;
 
-  bool isAudioMuted = true;
-  bool isVideoMuted = true;
+  bool isAudioMuted = false;
+  bool isVideoMuted = false;
 
   @override
   void initState() {
@@ -54,8 +54,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
     if (_meetingIdController.text.isNotEmpty) {
       _jitsiMeetMethods.createMeeting(
           roomName: _meetingIdController.text,
-          isAudioMuted: isAudioMuted,
-          isVideoTurnedOff: isVideoMuted,
+          isAudioMuted: !isAudioMuted,
+          isVideoTurnedOff: !isVideoMuted,
           name: _meetingNameController.text);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -146,12 +146,12 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
           ),
           const SizedBox(height: 20),
           MeetingOption(
-            text: isAudioMuted ? 'Turn on Audio' : 'Turn off Audio',
+            text: isAudioMuted ? 'Turn off Audio' : 'Turn on Audio',
             isMute: isAudioMuted,
             onChange: onAudioMuted,
           ),
           MeetingOption(
-            text: isVideoMuted ? 'Turn on Video' : 'Turn off Video  ',
+            text: isVideoMuted ? 'Turn off Video' : 'Turn on Video  ',
             isMute: isVideoMuted,
             onChange: onVideoMuted,
           ),
