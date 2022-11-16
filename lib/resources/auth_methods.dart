@@ -1,8 +1,9 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:meet_time/utils/utils.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -25,6 +26,8 @@ class AuthMethods {
       User? user = userCredential.user;
 
       if (user != null) {
+        log("Signing user added");
+
         if (userCredential.additionalUserInfo!.isNewUser) {
           await _firestore.collection('users').doc(user.uid).set({
             'username': user.displayName,
@@ -35,8 +38,8 @@ class AuthMethods {
         res = true;
       }
     } on FirebaseAuthException catch (e) {
-      showSnackBar(context, e.message!);
-      print("Signing Error ${e.toString()}");
+      //showSnackBar(context, e.message!);
+      log("Signing Error ${e.toString()}");
     }
     return res;
   }

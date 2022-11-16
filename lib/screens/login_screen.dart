@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:meet_time/resources/auth_methods.dart';
 import 'package:meet_time/widgets/custom_button.dart';
@@ -33,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
             text: "Google Sign In",
             onPressed: () async {
               bool res = await _authMethods.signInWithGoogle(context);
+              log("Signing response ${res.toString()}");
               if (res) {
                 Navigator.pushNamed(context, '/home');
               } else {}

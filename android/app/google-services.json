@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "74589578366",
+    "project_id": "meet-time-9c242",
+    "storage_bucket": "meet-time-9c242.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74589578366:android:9a81cd18ba27c444a0e42f",
+        "android_client_info": {
+          "package_name": "com.khanosman.meet_time"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74589578366-cjh1gci97bq53d6b7nieo2cdl5t2vbn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDwcSTyb_OR7w5D-n7WUejIsyp0ssES40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74589578366-cjh1gci97bq53d6b7nieo2cdl5t2vbn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
